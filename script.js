@@ -167,9 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleTouchEnd(event) {
         const endX = event.changedTouches[0].clientX;
         if (endX < startX) {
-            movePlayer(-10); // 向左移动
+            movePlayer(-20); // 向左移动，增加移动距离
         } else if (endX > startX) {
-            movePlayer(10); // 向右移动
+            movePlayer(20); // 向右移动，增加移动距离
         }
     }
 
