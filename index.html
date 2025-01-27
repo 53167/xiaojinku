@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>接福小游戏</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 添加移动端适配 */
+        @media (max-width: 600px) {
+            #player {
+                width: 112.5px; /* 修改宽度 */
+                height: 112.5px; /* 修改高度 */
+            }
+            .falling-item {
+                width: 50px;
+                height: 50px;
+            }
+            #info-bar div {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 欢迎页 -->
+    <div id="welcome-page" class="page">
+        <img src="image/welcome_background.jpeg" alt="欢迎背景" class="background">
+        <button id="start-game-btn">开始接福</button>
+    </div>
+
+    <!-- 游戏页 -->
+    <div id="game-page" class="page" style="display: none;">
+        <img src="image/game_background.jpeg" alt="游戏背景" class="background">
+        <div id="info-bar">
+            <div>小金库: <span id="score">0</span>万</div>
+            <!-- 删除: <div>计时: <span id="timer">0</span></div> -->
+        </div>
+        <div id="game-area">
+            <div id="player" style="left: 50%; background-image: url('image/user.png');"></div>
+            <!-- 添加掉落物元素 -->
+            <div id="fallingItem" class="falling-item"></div>
+        </div>
+        <div id="popup" class="popup" style="display: none;">
+            <h2>游戏结束</h2>
+            <h3>小金库: <span id="final-score">0</span>万</h3>
+            <!-- 删除: <h3>总时间: <span id="final-timer"></span></h3> -->
+            <button id="retry-btn">再来！</button>
+        </div>
+    </div>
+
+    <audio id="background-music" src="music/background_music.mp3" loop></audio>
+    <audio id="button-sound" src="music/button.mp3"></audio>
+    <audio id="bomb-sound" src="music/bomb.mp3"></audio>
+    <audio id="music1" src="music/music1.mp3"></audio>
+    <audio id="music2" src="music/music2.mp3"></audio>
+    <audio id="music3" src="music/music3.mp3"></audio>
+    <audio id="music4" src="music/music4.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
